@@ -1,256 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Assistant for Salons – 24/7 Booking & Customer Replies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant for Salons – 24/7 Booking & Customer Replies</title>
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
-      scroll-behavior: smooth;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    .hero {
-      background: linear-gradient(rgba(111,66,193,0.7), rgba(155,110,243,0.7)),
-                  url('https://images.unsplash.com/photo-1588776814546-8c1fc60e3f86?auto=format&fit=crop&w=1400&q=80')
-                  center/cover no-repeat;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      margin-top: 15px;
-      opacity: 0.95;
-    }
-    .btn-hero {
-      background-color: #ff9f1c;
-      border-color: #ff9f1c;
-      color: white;
-    }
-    .btn-hero:hover {
-      background-color: #e68a00;
-      border-color: #e68a00;
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 25px;
-    }
-    .feature-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-    .feature-icon {
-      font-size: 3rem;
-      color: #6f42c1;
-      margin-bottom: 15px;
-    }
-    .pricing-card {
-      border-radius: 12px;
-      padding: 30px;
-      background: white;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .pricing-card:hover {
-      transform: translateY(-5px);
-    }
-    .pricing-highlight {
-      border: 2px solid #6f42c1;
-    }
-    .testimonial-card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
-    }
-    .testimonial-quote {
-      font-style: italic;
-    }
-    .faq-item {
-      margin-bottom: 15px;
-    }
-    footer {
-      padding: 30px 0;
-      text-align: center;
-      color: #777;
-    }
-    .footer-social a {
-      margin: 0 10px;
-      color: #6f42c1;
-      font-size: 1.3rem;
-      transition: color 0.3s;
-    }
-    .footer-social a:hover {
-      color: #ff9f1c;
-    }
-  </style>
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(111,66,193,0.7), rgba(155,110,243,0.7)),
+                url('https://images.unsplash.com/photo-1588776814546-8c1fc60e3f86?auto=format&fit=crop&w=1400&q=80')
+                center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+.hero h1 { font-size: 3rem; font-weight: 700; }
+.hero p { font-size: 1.3rem; margin-top: 15px; opacity: 0.95; }
+.btn-hero { background-color: #ff9f1c; border-color: #ff9f1c; color: white; }
+.btn-hero:hover { background-color: #e68a00; border-color: #e68a00; }
+
+/* Section Titles */
+.section-title { font-size: 2rem; font-weight: 600; margin-bottom: 25px; }
+
+/* Feature / About Cards */
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+.feature-card:hover { transform: translateY(-5px); }
+.feature-icon { font-size: 3rem; color: #6f42c1; margin-bottom: 15px; }
+
+/* Pricing Cards */
+.pricing-card {
+    border-radius: 12px;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+.pricing-card:hover { transform: translateY(-5px); }
+.pricing-highlight { border: 2px solid #6f42c1; }
+
+/* Testimonials */
+.testimonial-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+.testimonial-quote { font-style: italic; }
+
+/* FAQ */
+.faq-item { margin-bottom: 15px; }
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #777;
+}
+.footer-social a {
+    margin: 0 10px;
+    color: #6f42c1;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+.footer-social a:hover { color: #ff9f1c; }
+</style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-up">
     <div class="container">
-      <h1>Stop Losing Clients to Missed Messages</h1>
-      <p>Your AI Salon Assistant handles bookings, replies, and FAQs 24/7 – so you don’t have to.</p>
-      <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-hero btn-lg mt-4">
-        Book Your Free Demo
-      </a>
+        <h1>Stop Losing Clients to Missed Messages</h1>
+        <p>Your AI Salon Assistant handles bookings, replies, and FAQs 24/7 – so you don’t have to.</p>
+        <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-hero btn-lg mt-4">Book Your Free Demo</a>
     </div>
-  </section>
+</section>
 
-  <!-- Features Section -->
-  <section class="py-5" data-aos="fade-up">
+<!-- Features Section -->
+<section class="py-5" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title text-center">What Your AI Assistant Can Do</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature-card text-center">
-            <i class="fa-solid fa-comments feature-icon"></i>
-            <h5>Instant Messaging</h5>
-            <p>Automatically reply to client DMs, emails, and inquiries — even after business hours.</p>
-          </div>
+        <h2 class="section-title text-center">What Your AI Assistant Can Do</h2>
+        <div class="row g-4 mt-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card text-center">
+                    <i class="fa-solid fa-comments feature-icon"></i>
+                    <h5>Instant Messaging</h5>
+                    <p>Automatically reply to client DMs, emails, and inquiries — even after business hours.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card text-center">
+                    <i class="fa-solid fa-calendar-check feature-icon"></i>
+                    <h5>Appointment Scheduling</h5>
+                    <p>Books appointments, handles rescheduling, and sends reminders automatically.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card text-center">
+                    <i class="fa-solid fa-circle-info feature-icon"></i>
+                    <h5>Instant FAQ Support</h5>
+                    <p>Answers pricing, services, policies, and location questions instantly and accurately.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-card text-center">
-            <i class="fa-solid fa-calendar-check feature-icon"></i>
-            <h5>Appointment Scheduling</h5>
-            <p>Books appointments, handles rescheduling, and sends reminders automatically.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature-card text-center">
-            <i class="fa-solid fa-circle-info feature-icon"></i>
-            <h5>Instant FAQ Support</h5>
-            <p>Answers pricing, services, policies, and location questions instantly and accurately.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Pricing Section -->
-  <section class="py-5 bg-light" data-aos="fade-up">
+<!-- Pricing Section -->
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title text-center">Simple Pricing</h2>
-      <div class="row justify-content-center mt-4 g-4">
-        <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
-          <div class="pricing-card text-center">
-            <h4>One-Time Setup</h4>
-            <p class="display-6 fw-bold my-3">$150–$300</p>
-            <p>We configure your AI assistant for your services, pricing, and workflow.</p>
-            <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-primary mt-3">Get Started</a>
-          </div>
+        <h2 class="section-title text-center">Simple Pricing</h2>
+        <div class="row justify-content-center mt-4 g-4">
+            <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-card text-center">
+                    <h4>One-Time Setup</h4>
+                    <p class="display-6 fw-bold my-3">$150–$300</p>
+                    <p>We configure your AI assistant for your services, pricing, and workflow.</p>
+                    <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-primary mt-3">Get Started</a>
+                </div>
+            </div>
+            <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card pricing-highlight text-center">
+                    <h4>Monthly Subscription</h4>
+                    <p class="display-6 fw-bold my-3">$25–$75</p>
+                    <p>Full access to your AI assistant — 24/7 replies, booking automation, updates, and support.</p>
+                    <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-primary mt-3">Get Started</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="pricing-card pricing-highlight text-center">
-            <h4>Monthly Subscription</h4>
-            <p class="display-6 fw-bold my-3">$25–$75</p>
-            <p>Full access to your AI assistant — 24/7 replies, booking automation, updates, and support.</p>
-            <a href="mailto:mbirukasmaref@gmail.com?subject=Demo Request" class="btn btn-primary mt-3">Get Started</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- About Me Section -->
-  <section class="py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">About Me</h2>
-      <p style="max-width:700px; margin:auto; font-size:1.1rem;">
-        I’m Biruk, a data architect and DevOps specialist with experience building scalable AI and
-        automation solutions. I help local businesses implement smart AI assistants that handle
-        bookings, messages, and FAQs 24/7.
-      </p>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-5" data-aos="fade-up">
+<!-- About Me Section as Card -->
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title text-center">What Clients Say</h2>
-      <div class="row mt-4">
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-card">
-            <p class="testimonial-quote">"This AI assistant has completely changed how I manage my bookings — saves me hours every week!"</p>
-            <p class="text-end fw-bold mb-0">— Sarah, Salon Owner</p>
-          </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card text-center">
+                    <i class="fa-solid fa-user feature-icon"></i>
+                    <h5>About Me</h5>
+                    <p>I’m Biruk, a data architect and DevOps specialist with experience building scalable AI and automation solutions. I help local businesses implement smart AI assistants that handle bookings, messages, and FAQs 24/7.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial-card">
-            <p class="testimonial-quote">"I love how my clients get instant replies 24/7. Professional and super easy to use."</p>
-            <p class="text-end fw-bold mb-0">— Alex, Personal Trainer</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- FAQ Section -->
-  <section class="py-5 bg-light" data-aos="fade-up">
+<!-- Testimonials Section -->
+<section class="py-5" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title text-center">Frequently Asked Questions</h2>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-        <h5>Do I need to install anything?</h5>
-        <p>No installation needed — it runs in the cloud and works with your existing messaging systems.</p>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-        <h5>Can I customize responses?</h5>
-        <p>Yes! You control the answers, hours, and style of replies.</p>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-        <h5>Is it suitable for small businesses?</h5>
-        <p>Absolutely. It's designed for solo entrepreneurs and small teams to save time and boost client satisfaction.</p>
-      </div>
+        <h2 class="section-title text-center">What Clients Say</h2>
+        <div class="row mt-4">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"This AI assistant has completely changed how I manage my bookings — saves me hours every week!"</p>
+                    <p class="text-end fw-bold mb-0">— Sarah, Salon Owner</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"I love how my clients get instant replies 24/7. Professional and super easy to use."</p>
+                    <p class="text-end fw-bold mb-0">— Alex, Personal Trainer</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <footer data-aos="fade-up">
+<!-- FAQ Section -->
+<section class="py-5 bg-light" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <h5>Do I need to install anything?</h5>
+            <p>No installation needed — it runs in the cloud and works with your existing messaging systems.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <h5>Can I customize responses?</h5>
+            <p>Yes! You control the answers, hours, and style of replies.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <h5>Is it suitable for small businesses?</h5>
+            <p>Absolutely. It's designed for solo entrepreneurs and small teams to save time and boost client satisfaction.</p>
+        </div>
+    </div>
+</section>
+
+<footer data-aos="fade-up">
     <p>© 2025 Biruk Asmare Muse — Ottawa, Canada</p>
     <div class="footer-social mt-2">
-      <a href="https://www.linkedin.com/in/biruk-asmare-muse/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/biruk-asmare-muse/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-  </footer>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: true });
+</script>
 </body>
 </html>
